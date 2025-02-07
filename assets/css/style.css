@@ -9,6 +9,34 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.accomo {
+  width: 900px;
+  height: 550px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content */
+    justify-content: center;
+  }
+
+  table {
+    display: block;
+  }
+
+  .acco-det {
+    display: block;
+    width: 100%;
+  }
+
+  .accomo {
+    width: 100%; /*Full width for better responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    padding: 10px 0; /* Reduce padding */
+  }
+}
 .speaker-details {
   display: flex;
   flex-direction: column;
@@ -327,7 +355,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(40, 58, 90, 0.9);
+  background: rgba(27, 139, 32, 0.9);
   transition: 0.3s;
   z-index: 999;
 }
@@ -356,19 +384,19 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #37517e;
+  color: #06930d;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover > a {
-  color: #47b2e4;
+  color: #0ce70c;
 }
 
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
   margin: 15px;
-  color: #37517e;
+  color: #06930d;
 }
 
 .navbar-mobile .dropdown ul {
@@ -398,7 +426,7 @@ h6 {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover > a {
-  color: #47b2e4;
+  color: #17981b;
 }
 
 .navbar-mobile .dropdown > .dropdown-active {
@@ -411,7 +439,7 @@ h6 {
 #hero {
   /* margin-top: 0px; */
   width: 100%;
-  height: 130vh;
+  height: 110vh;
   background: #006a4e;
 }
 
@@ -477,15 +505,21 @@ h6 {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
+.hero-img img {
+  width: 500px;
+  border-radius: 20px;
+}
+
 @media (max-width: 400px) {
   #hero {
-    height: 140vh;
+    height: 130vh;
+    text-align: center;
   }
 }
 
 @media (max-width: 991px) {
   #hero {
-    height: 120vh;
+    height: 130vh;
     text-align: center;
   }
 
@@ -498,7 +532,9 @@ h6 {
   }
 
   #hero .hero-img img {
-    width: 50%;
+    width: 90%;
+    border-radius: 20px;
+    margin-top: 20px;
   }
 }
 
@@ -515,13 +551,15 @@ h6 {
   }
 
   #hero .hero-img img {
-    width: 70%;
+    width: 90%;
+    border-radius: 20px;
   }
 }
 
 @media (max-width: 575px) {
   #hero .hero-img img {
-    width: 80%;
+    width: 90%;
+    border-radius: 20px;
   }
 
   #hero .btn-get-started {
@@ -602,6 +640,19 @@ section {
   margin-bottom: 0;
 }
 
+.tourist-image {
+  width: 100%; /* Makes image responsive */
+  max-width: 500px; /* Prevents it from being too large */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes extra space below the image */
+  margin: 0 auto; /* Centers the image */
+}
+
+@media (max-width: 575px) {
+  .tourist-image {
+    max-width: 90%; /* Adjusts size for smaller screens */
+  }
+}
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
@@ -812,6 +863,43 @@ section {
   .why-us .img {
     min-height: 200px;
   }
+  .why-us .content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .why-us .content table tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+
+  .why-us .content table th {
+    white-space: nowrap; /* Prevents breaking */
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .why-us .content table th:nth-child(1) {
+    flex: 2; /* Title (e.g., "Start of Abstract Submission") */
+  }
+
+  .why-us .content table th:nth-child(2) {
+    flex: 0.3; /* ":" separator */
+    text-align: center;
+  }
+
+  .why-us .content table th:nth-child(3) {
+    flex: 1.5; /* Dates */
+    text-align: right;
+  }
+}
+
+@media (max-width: 575px) {
+  .why-us .img {
+    min-height: 200px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -927,7 +1015,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Cta 40, 90, 59
+# Cta 
 --------------------------------------------------------------*/
 .cta {
   background: linear-gradient(rgba(37, 82, 54, 0.9), rgba(37, 82, 54, 0.9)),
@@ -1920,10 +2008,6 @@ section {
   height: 400px;
 }
 
-.strip-logo-2 {
-  background-color: white;
-}
-
 .img-1,
 .img-2 {
   width: 600px;
@@ -1951,8 +2035,9 @@ section {
 }
 
 .strip-logo-2 {
-  width: 70px;
+  width: 100px;
   margin-left: 20px;
+  border-radius: 10px;
 }
 
 .dummy {
@@ -1970,8 +2055,9 @@ section {
   }
 
   .strip-logo-2 {
-    width: 40px;
-    margin-left: 20px;
+    width: 60px;
+    margin-left: 10px;
+    border-radius: 10px;
   }
 
   .dummy {
